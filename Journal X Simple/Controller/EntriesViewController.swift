@@ -22,18 +22,26 @@ class EntriesViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        return retriveNotes()
+    }
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return notes.count
     }
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier" , for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NotesTableViewCell" , for: indexPath)
         // Configure The Cell
+        
+        let note : Note = notes[indexPath.row]
+        //cell.configureCell(note: note)
         return cell
     }
     
@@ -45,8 +53,34 @@ class EntriesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             tableView.deleteRows(at: [indexPath], with: .fade)
-        }else if editingStyle == .insert {
+        }
+        tableView.reloadData()
+    }
+    
+    
+    func retriveNotes(){
+        mangedObjectContext?.perform {
+            self.fetchNotesFromCoreData { (notes) in
+                if let notes = notes{
+                    self.notes = notes
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func fetchNotesFromCoreData(completion: @escaping ([Note]?) -> Void){
+        mangedObjectContext?.perform {
+            var notes = [Note]()
+            let request: NSFetchRequest<Note> = Note.fetchRequest()
             
+            do{
+                notes = try self.mangedObjectContext!.fetch(request)
+                completion(notes)
+            }
+            catch{
+                print("Could Not Fetch Notes From Core Data: \(error.localizedDescription)")
+            }
         }
     }
 }

@@ -10,6 +10,7 @@
 		5666DBE223F16BAC00F4843C /* Journal X Simple.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5666DBE023F16BAC00F4843C /* Journal X Simple.xcdatamodeld */; };
 		5666DBE523F16DB100F4843C /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5666DBE323F16DB100F4843C /* Note+CoreDataClass.swift */; };
 		5666DBE623F16DB100F4843C /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5666DBE423F16DB100F4843C /* Note+CoreDataProperties.swift */; };
+		5666DBE823F175B000F4843C /* noteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5666DBE723F175B000F4843C /* noteTableViewCell.swift */; };
 		CD6F336223E6E7AE007F9319 /* ABeeZee-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD6F336123E6E7AE007F9319 /* ABeeZee-Italic.otf */; };
 		CD6F336423E6E7BD007F9319 /* ABeeZee-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD6F336323E6E7BD007F9319 /* ABeeZee-Regular.otf */; };
 		CDF0D05D23E63FB20006C19A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF0D05C23E63FB20006C19A /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		5666DBE123F16BAC00F4843C /* Journal X Simple.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Journal X Simple.xcdatamodel"; sourceTree = "<group>"; };
 		5666DBE323F16DB100F4843C /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5666DBE423F16DB100F4843C /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5666DBE723F175B000F4843C /* noteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteTableViewCell.swift; sourceTree = "<group>"; };
 		CD6F336123E6E7AE007F9319 /* ABeeZee-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABeeZee-Italic.otf"; sourceTree = "<group>"; };
 		CD6F336323E6E7BD007F9319 /* ABeeZee-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABeeZee-Regular.otf"; sourceTree = "<group>"; };
 		CDF0D05923E63FB20006C19A /* Journal X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journal X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 				CDF0D06523E63FB60006C19A /* Assets.xcassets */,
 				CDF0D06723E63FB60006C19A /* LaunchScreen.storyboard */,
 				CDF0D06A23E63FB60006C19A /* Info.plist */,
+				5666DBE723F175B000F4843C /* noteTableViewCell.swift */,
 			);
 			path = "Journal X Simple";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				5666DBE223F16BAC00F4843C /* Journal X Simple.xcdatamodeld in Sources */,
 				CDF0D05D23E63FB20006C19A /* AppDelegate.swift in Sources */,
 				CDF0D05F23E63FB20006C19A /* SceneDelegate.swift in Sources */,
+				5666DBE823F175B000F4843C /* noteTableViewCell.swift in Sources */,
 				5666DBE523F16DB100F4843C /* Note+CoreDataClass.swift in Sources */,
 				CDF0D07423E63FED0006C19A /* Constants.swift in Sources */,
 				CDF0D07823E6413D0006C19A /* EntryViewController.swift in Sources */,

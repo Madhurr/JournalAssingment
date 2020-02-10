@@ -10,6 +10,7 @@ import UIKit
 
 class EntryViewController: UIViewController {
 
+    @IBOutlet weak var noteInfoView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

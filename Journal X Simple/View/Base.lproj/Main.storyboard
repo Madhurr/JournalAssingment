@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotesTableViewCell" rowHeight="124" id="wzO-1F-bRj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotesTableViewCell" rowHeight="124" id="wzO-1F-bRj" customClass="noteTableViewCell" customModule="Journal_X" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wzO-1F-bRj" id="K52-rP-0NE">
@@ -32,13 +33,13 @@
                                             <rect key="frame" x="1" y="1" width="412" height="122"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXk-7N-dZA">
-                                                    <rect key="frame" x="31" y="8" width="373" height="26.5"/>
+                                                    <rect key="frame" x="31" y="8" width="373" height="26"/>
                                                     <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reg-Vc-MYS">
-                                                    <rect key="frame" x="31" y="42.5" width="373" height="73"/>
+                                                    <rect key="frame" x="31" y="42" width="373" height="73"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="73" id="LaQ-Vu-Pxq"/>
                                                         <constraint firstAttribute="width" constant="373" id="i1K-AM-LLX"/>
@@ -51,6 +52,12 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKO-Xc-6Wh">
                                                     <rect key="frame" x="1" y="1" width="22" height="120"/>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" name="Text Color"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="datePickerTapped:" destination="wzO-1F-bRj" eventType="touchUpInside" id="Y7v-fI-GY6"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DmA-m2-lF5">
                                                     <rect key="frame" x="20" y="113" width="392" height="8"/>
@@ -80,6 +87,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="DescriptionLabel" destination="reg-Vc-MYS" id="4dN-kH-erD"/>
+                                    <outlet property="cellDivisorView" destination="DmA-m2-lF5" id="dkw-cx-6Ia"/>
+                                    <outlet property="datePickerButton" destination="jKO-Xc-6Wh" id="pTc-y0-jID"/>
+                                    <outlet property="titleLabel" destination="IXk-7N-dZA" id="fgx-pM-yo9"/>
                                     <segue destination="oJL-eJ-atl" kind="show" id="r66-Gq-KuH"/>
                                 </connections>
                             </tableViewCell>
@@ -151,6 +162,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="doQ-AE-hXv"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="eYH-5C-28R"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteInfoView" destination="JSf-Gu-d9P" id="8Bh-8o-PKH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7TF-8f-sdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,6 +206,11 @@
             <point key="canvasLocation" x="-265" y="857"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Text Color">
+            <color red="0.16099999845027924" green="0.16099999845027924" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="r66-Gq-KuH"/>
     </inferredMetricsTieBreakers>
