@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EntryViewController.swift
 //  Journal X Simple
 //
 //  Created by Amogh Joshi on 2/1/20.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EntryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
